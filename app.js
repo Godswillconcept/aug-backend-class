@@ -1,56 +1,35 @@
-const {
-  numSum,
-  user,
-  numModulus,
-  numSubtract,
-  numMultiply,
-  stringSearch,
-} = require("./data");
-// const { garage, stats } = require("./views/array");
+const express = require("express");
+const path = require("path");
+const app = express();
+const port = 3000;
 
-// console.log(user.name);
-function greetUser(user) {
-  return `Welcome ${user}`;
-}
+const index = path.resolve("pages", "index.html");
+const about = path.resolve("pages", "about.html");
+const notFound = path.resolve("pages", "not-found.html");
+const contactUs = path.resolve("pages", "contact-us.html");
+app.get("/", (req, res) => {
+  // res.write(`<h1>Homepage with express</h1>`);
+  res.status(200).sendFile(index);
+});
 
-// console.log(greetUser("Abass"));
+app.get("/about", (req, res) => {
+  res.status(200).sendFile(about);
+});
 
-// setTimeout(function () {
-//   console.log("Welcome on board");
-// }, 5000);
+app.get("/contact-us", (req, res) => {
+  res.status(200).sendFile(contactUs);
+});
 
-// setTimeout(() => console.log("Introduction to Nodejs"), 6000);
+app.get("*", (req, res) => {
+  res.status(404).sendFile(notFound);
+});
 
-// console.log(garage);
+app.listen(port, () => {
+  console.log(`Server listening at port:${port} http://localhost:${port}`);
+});
 
-// sum subtraction, multiply, modulus
-
-// console.log("numSum:", numSum(21, 67, 46, 56));
-
-// console.log("numSubtract:", numSubtract(21, 67, 46));
-
-// console.log("numMultiply:", numMultiply(21, 67, 46, 56));
-
-// console.log("numModulus:", numModulus(2346, 7));
-
-// console.log("stats:", stats);
-// console.log(stringSearch("Javascript string search", 'string')); // true // position 
-console.log(__dirname); // returns the directory to the file
-
-
-// install packages 
-// 1. npm install <pkg> / npm i <pkg>
-// 2. npm i <pkg>
-
-
-// limiting package version install
-
-// npm i <pkg>@version
-
-// uninstall packages
-// 1. npm uninstall <pkg> / npm un <pkg>
-
-// git bash
-
-// git config --global.name 'Olatunji Abass'
-// git config --global.email 'olatunjiabass01@gmail.com'
+console.log(
+  new URL(
+    "http://localhost:3000/contact-us?name=Olatunji+Abass&email=olatunjiabass01%40gmail.com&message=Testing..."
+  )
+);
