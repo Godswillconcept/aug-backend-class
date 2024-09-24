@@ -2,7 +2,7 @@ const url = require("url");
 
 // console.log(url);
 const myUrl = new URL("/in/godswillconcept", "https://linkedin.com");
-// https://linkedin.com/in/godswillconcept
+// https://linkedin.com/in/godswillconcept/update
 // console.log(myUrl);
 
 const apiUrl = new URL(
