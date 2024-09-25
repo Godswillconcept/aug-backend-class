@@ -19,6 +19,7 @@
     "directory": "aug-backend-class"
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
     "bootstrap": "^4.0.0",
     "express": "^4.21.0"
   },
