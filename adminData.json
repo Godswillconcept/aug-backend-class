@@ -1,0 +1,32 @@
+[
+    {
+        "id": 2,
+        "name": "Smith Samuel",
+        "email": "smithsammy01@gmail.com",
+        "password": "smithsammy01"
+    },
+    {
+        "id": 3,
+        "name": "Faruq Olalekan",
+        "email": "asamkid@gmail.com",
+        "password": "asamkid"
+    },
+    {
+        "id": 4,
+        "name": "Boluwatife Ayinde",
+        "email": "boluwastar@hamster.cat",
+        "password": "olobaCat"
+    },
+    {
+        "id": 5,
+        "name": "Richard Milli",
+        "email": "boluwastar@hamster.cat",
+        "password": "Menfi"
+    },
+    {
+        "id": 6,
+        "name": "Richard Milli",
+        "email": "richystar@hamster.cat",
+        "password": "bufaalo99"
+    }
+]

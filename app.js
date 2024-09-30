@@ -4,18 +4,16 @@ const app = express();
 const adminRouter = require("./routes/admin");
 const vendorRouter = require("./routes/vendor");
 const distributorRouter = require("./routes/distributor");
-const { urlLogger } = require("./middlewares");
+const { urlLogger, dateTimeLogger, authenticate } = require("./middlewares");
 
 const PORT = 3000;
 
 // admin route
 
-// vendor routes
-
 // middleware
 app.use(express.urlencoded({ extended: true }));
-app.use("/api/admin", urlLogger, adminRouter);
-app.use("/api/vendor", vendorRouter);
+app.use("/api/admin", [urlLogger, authenticate], adminRouter);
+app.use("/api/vendor", [dateTimeLogger, urlLogger], vendorRouter);
 app.use("/api/distributor", distributorRouter);
 // api/admin/dashboard - admin register, login, update profile, check products
 // api/vendor/dashboard - vendor
